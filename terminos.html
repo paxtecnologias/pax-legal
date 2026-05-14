@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos y condiciones — PAX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000; --white: #fff;
+      --g1: #f6f6f6; --g2: #e8e8e8; --g3: #aaa; --g4: #555; --text: #1a1a1a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; background: var(--white); color: var(--text); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--g2); }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--black); text-decoration: none; letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--g3); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--black); }
+
+    .page-header { max-width: 1080px; margin: 0 auto; padding: 5rem 2rem 3rem; border-bottom: 1px solid var(--g2); }
+    .page-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+
+    .layout { max-width: 1080px; margin: 0 auto; padding: 3rem 2rem 8rem; display: grid; grid-template-columns: 200px 1fr; gap: 6rem; align-items: start; }
+
+    .sidebar { position: sticky; top: 80px; }
+    .sidebar-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--g3); margin-bottom: 1rem; }
+    .sidebar ul { list-style: none; }
+    .sidebar a { display: block; padding: 0.35rem 0 0.35rem 0.75rem; margin-left: -0.75rem; font-size: 0.82rem; color: var(--g3); text-decoration: none; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; }
+    .sidebar a:hover { color: var(--black); }
+    .sidebar a.active { color: var(--black); border-left-color: var(--black); font-weight: 500; }
+
+    .content section { padding-bottom: 3rem; margin-bottom: 3rem; border-bottom: 1px solid var(--g2); scroll-margin-top: 80px; }
+    .content section:last-child { border-bottom: none; }
+    .content h2 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; color: var(--black); margin-bottom: 1.25rem; }
+    .content h3 { font-size: 0.95rem; font-weight: 600; color: var(--black); margin: 2rem 0 0.75rem; }
+    .content p { font-size: 0.9375rem; color: #333; margin-bottom: 1rem; line-height: 1.75; }
+    .content ul { list-style: none; margin: 0.75rem 0 1.25rem; border-top: 1px solid var(--g2); }
+    .content ul li { font-size: 0.9375rem; color: #333; padding: 0.7rem 0 0.7rem 1rem; border-bottom: 1px solid var(--g2); position: relative; line-height: 1.6; }
+    .content ul li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 4px; height: 4px; border-radius: 50%; background: var(--g3); }
+
+    .def-list { margin: 0.5rem 0 1rem; }
+    .def-item { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--g2); font-size: 0.9rem; line-height: 1.6; }
+    .def-item:first-child { border-top: 1px solid var(--g2); }
+    .def-term { font-weight: 600; color: var(--black); font-size: 0.82rem; }
+    .def-desc { color: #444; }
+
+    .notice { background: var(--g1); border-radius: 6px; padding: 1rem 1.25rem; font-size: 0.875rem; color: var(--g4); margin: 1.25rem 0; line-height: 1.65; }
+    .notice strong { color: var(--black); font-weight: 500; }
+
+    footer { border-top: 1px solid var(--g2); padding: 2.5rem 2rem; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-inner p { font-size: 0.8rem; color: var(--g3); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.8rem; color: var(--g3); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; gap: 0; padding-top: 2rem; }
+      .sidebar { display: none; }
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .layout { padding: 2rem 1.25rem 5rem; }
+      .nav-inner { padding: 0 1.25rem; }
+      .def-item { grid-template-columns: 1fr; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">PAX</a>
+    <ul class="nav-links">
+      <li><a href="terminos.html" class="active">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Privacidad</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Términos y condiciones</h1>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <p class="sidebar-label">Contenido</p>
+    <ul>
+      <li><a href="#glosario">Glosario</a></li>
+      <li><a href="#s1">1. El servicio</a></li>
+      <li><a href="#s2">2. Relación contractual</a></li>
+      <li><a href="#s3">3. Naturaleza del vínculo</a></li>
+      <li><a href="#s4">4. Requisitos y responsabilidades</a></li>
+      <li><a href="#s5">5. Licencia</a></li>
+      <li><a href="#s6">6. Tarifas y comisiones</a></li>
+      <li><a href="#s7">7. Seguro para pasajeros</a></li>
+      <li><a href="#s8">8. Contenido</a></li>
+      <li><a href="#s9">9. Comunicaciones</a></li>
+      <li><a href="#s10">10. Responsabilidad</a></li>
+      <li><a href="#s11">11. Legislación</a></li>
+      <li><a href="#s12">12. Disposiciones generales</a></li>
+      <li><a href="#s13">13. Contacto</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <section id="glosario">
+      <h2>Glosario</h2>
+      <div class="def-list">
+        <div class="def-item"><span class="def-term">PAX / LA PLATAFORMA</span><span class="def-desc">Empresa constituida conforme a las leyes de la República Argentina, titular y operadora de la plataforma tecnológica de interconexión bajo demanda para servicios de transporte.</span></div>
+        <div class="def-item"><span class="def-term">APLICACIÓN</span><span class="def-desc">Las apps "PAX" (para usuarios) y "PAX CONDUCTOR" (para conductores), disponibles en Google Play Store y Apple App Store.</span></div>
+        <div class="def-item"><span class="def-term">USUARIO</span><span class="def-desc">Persona física mayor de 18 años que utiliza la APLICACIÓN para solicitar servicios de transporte.</span></div>
+        <div class="def-item"><span class="def-term">CONDUCTOR</span><span class="def-desc">Persona física mayor de 18 años que, de forma independiente, ofrece servicios de transporte a través de la APLICACIÓN.</span></div>
+        <div class="def-item"><span class="def-term">CLIENTE / CLIENTES</span><span class="def-desc">Término que refiere a USUARIOS y CONDUCTORES en forma conjunta.</span></div>
+        <div class="def-item"><span class="def-term">SERVICIOS</span><span class="def-desc">El conjunto de funcionalidades tecnológicas ofrecidas por la PLATAFORMA, incluyendo la app, el portal web y las comunicaciones relacionadas.</span></div>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>1. El servicio</h2>
+      <p>PAX es una plataforma tecnológica que conecta en tiempo real a CONDUCTORES independientes con USUARIOS que requieren servicios de transporte. PAX no presta servicios de transporte por sí misma: actúa exclusivamente como intermediaria tecnológica que facilita la interacción entre partes independientes.</p>
+      <p>A través de la APLICACIÓN, el USUARIO puede ver la ubicación del CONDUCTOR en tiempo real, mejorando la seguridad, la previsibilidad del servicio y la coordinación del punto de encuentro. El CONDUCTOR recibe solicitudes de viaje y puede gestionarlas desde su dispositivo móvil.</p>
+    </section>
+
+    <section id="s2">
+      <h2>2. Relación contractual</h2>
+      <p>Al acceder, instalar o utilizar la APLICACIÓN o cualquiera de los SERVICIOS, el CLIENTE acepta quedar jurídicamente vinculado por los presentes Términos y Condiciones. Si el CLIENTE no está de acuerdo, debe abstenerse de utilizar los SERVICIOS.</p>
+      <h3>Modificaciones</h3>
+      <p>PAX se reserva el derecho de modificar estos Términos en cualquier momento. Las modificaciones entrarán en vigor desde su publicación. El uso continuado de los SERVICIOS constituirá la aceptación de los nuevos términos.</p>
+      <h3>Terminación</h3>
+      <p>PAX podrá suspender o dar por terminada la relación contractual con cualquier CLIENTE, con o sin causa. El CLIENTE también podrá dar de baja su cuenta en cualquier momento desde la APLICACIÓN.</p>
+    </section>
+
+    <section id="s3">
+      <h2>3. Naturaleza del vínculo con conductores</h2>
+      <p>PAX proporciona exclusivamente una solución tecnológica de intermediación. No existe entre PAX y el CONDUCTOR ninguna relación laboral, de dependencia, de agencia, de sociedad ni de franquicia. El CONDUCTOR opera de manera completamente autónoma e independiente.</p>
+      <p>Los eventuales reclamos derivados de la prestación del servicio de transporte son responsabilidad directa entre el CONDUCTOR y el USUARIO, y se regirán por las normas civiles y comerciales aplicables. PAX no es parte en dicho contrato.</p>
+    </section>
+
+    <section id="s4">
+      <h2>4. Requisitos y responsabilidades</h2>
+      <p>Para utilizar los SERVICIOS, el CLIENTE debe ser mayor de 18 años, registrarse con información veraz y actualizada, proporcionar un método de contacto válido, y cumplir con todas las leyes aplicables en su jurisdicción.</p>
+      <h3>Responsabilidades del conductor</h3>
+      <ul>
+        <li>Mantener su documentación personal y vehicular vigente: licencia de conducir, seguro obligatorio del automotor, verificación técnica vehicular y habilitaciones municipales o nacionales que correspondan.</li>
+        <li>Brindar el servicio de transporte de manera segura, respetuosa y conforme a la normativa vial vigente.</li>
+        <li>Tratar a los USUARIOS con respeto y sin discriminación de ningún tipo.</li>
+        <li>Mantener su información de cuenta actualizada y resguardar sus credenciales de acceso.</li>
+        <li>Poseer únicamente una cuenta activa en la PLATAFORMA, salvo autorización expresa por escrito de PAX.</li>
+      </ul>
+      <h3>Responsabilidades del usuario</h3>
+      <ul>
+        <li>Proporcionar información correcta al solicitar un viaje, incluyendo el punto de origen y destino.</li>
+        <li>Estar disponible en el punto de encuentro acordado dentro de un tiempo razonable.</li>
+        <li>Tratar al CONDUCTOR con respeto y sin discriminación de ningún tipo.</li>
+        <li>No solicitar al CONDUCTOR que infrinja normas de tránsito o actúe en contra de las condiciones del servicio.</li>
+        <li>Mantener su información de cuenta actualizada y resguardar sus credenciales de acceso.</li>
+      </ul>
+    </section>
+
+    <section id="s5">
+      <h2>5. Licencia de uso</h2>
+      <p>PAX otorga al CLIENTE una licencia personal, limitada, no exclusiva, revocable y no transferible para acceder y utilizar la APLICACIÓN en su dispositivo personal, exclusivamente en relación con los SERVICIOS.</p>
+      <p>Esta licencia no implica transferencia de propiedad intelectual. Todos los derechos sobre la APLICACIÓN, el software, los diseños, las marcas y el contenido son y seguirán siendo propiedad de PAX o de sus licenciantes.</p>
+      <h3>Restricciones</h3>
+      <p>El CLIENTE no podrá reproducir, modificar, distribuir, sublicenciar, explotar comercialmente los SERVICIOS, realizar ingeniería inversa de la APLICACIÓN, utilizar bots o herramientas automatizadas, intentar acceder sin autorización a sistemas de PAX, ni usar los SERVICIOS para fines ilícitos o fraudulentos.</p>
+    </section>
+
+    <section id="s6">
+      <h2>6. Tarifas y comisiones</h2>
+      <p>PAX calcula el precio de cada viaje en función de la distancia estimada del recorrido y/o la zona de origen y destino. El precio se muestra al USUARIO antes de confirmar la solicitud y al CONDUCTOR antes de aceptarla. La confirmación de ambas partes implica la aceptación del precio informado.</p>
+      <h3>Wallet del conductor</h3>
+      <p>La APLICACIÓN dispone de una billetera virtual ("WALLET") destinada al CONDUCTOR. El CONDUCTOR carga saldo mediante transferencia bancaria u otro medio habilitado, seleccionando entre los importes predefinidos disponibles en la APLICACIÓN.</p>
+      <p>Cada importe de recarga puede llevar asociada una comisión de servicio que se informa claramente antes de confirmar la recarga. Una vez acreditado el saldo, PAX debitará de la WALLET el porcentaje de comisión correspondiente por cada viaje completado.</p>
+      <div class="notice">El saldo de la WALLET no es reembolsable en efectivo, salvo en los casos expresamente contemplados en la normativa aplicable. El saldo no genera intereses ni rendimiento alguno.</div>
+      <h3>Transparencia</h3>
+      <p>PAX informa dentro de la APLICACIÓN el porcentaje de comisión aplicable por viaje, el saldo disponible en tiempo real y el historial de recargas y débitos. Cualquier modificación en las comisiones será notificada con un mínimo de 7 días corridos de anticipación.</p>
+      <h3>Códigos promocionales</h3>
+      <p>PAX podrá emitir códigos promocionales que otorguen créditos u otros beneficios. Los códigos son personales, intransferibles, no tienen valor en efectivo y pueden tener fecha de vencimiento. PAX podrá anularlos en cualquier momento y se reserva el derecho de retener beneficios obtenidos mediante su uso fraudulento o ilícito.</p>
+    </section>
+
+    <section id="s7">
+      <h2>7. Seguro para pasajeros</h2>
+      <p>PAX ha celebrado un convenio con una compañía aseguradora ("ASEGURADORA") mediante el cual los CONDUCTORES pueden contratar, desde la APLICACIÓN, un seguro de responsabilidad civil hacia pasajeros ("SEGURO PARA PLATAFORMA"). La contratación es gestionada directamente entre el CONDUCTOR y la ASEGURADORA; PAX actúa únicamente como intermediaria tecnológica que facilita el acceso.</p>
+      <h3>Rol de PAX</h3>
+      <p>PAX no es una compañía de seguros ni un agente o productor de seguros habilitado, no asume responsabilidades propias de un asegurador, y no es parte del contrato de seguro. Las condiciones de cobertura, la prima y las exclusiones son definidas exclusivamente por la ASEGURADORA conforme a la Ley N.° 17.418 de Seguros y la normativa de la Superintendencia de Seguros de la Nación (SSN).</p>
+      <h3>Obligatoriedad según normativa local</h3>
+      <p>La exigencia de un seguro de responsabilidad civil hacia pasajeros varía según la ciudad, municipio o provincia donde opere el CONDUCTOR, y puede modificarse en cualquier momento por decisión de las autoridades competentes.</p>
+      <div class="notice"><strong>Es responsabilidad exclusiva del CONDUCTOR</strong> conocer, verificar y cumplir con la normativa vigente en cada jurisdicción donde preste servicios, incluyendo la contratación de los seguros que dicha normativa exija. PAX no asume responsabilidad alguna por el incumplimiento de las obligaciones legales locales del CONDUCTOR en materia de seguros.</div>
+      <h3>Recomendación</h3>
+      <p>Con independencia de la normativa local aplicable, PAX recomienda a todos los CONDUCTORES contar en todo momento con un seguro vigente que cubra a los pasajeros transportados. El CONDUCTOR que no cuente con cobertura adecuada asume en forma exclusiva todas las consecuencias legales, económicas y civiles derivadas de cualquier siniestro. PAX no será responsable por daños a pasajeros originados en la ausencia o insuficiencia de cobertura del CONDUCTOR.</p>
+    </section>
+
+    <section id="s8">
+      <h2>8. Contenido</h2>
+      <p>La PLATAFORMA puede permitir al CLIENTE cargar contenido (comentarios, calificaciones, fotografías de perfil u otro material). El CLIENTE conserva la titularidad de dicho contenido, pero al cargarlo otorga a PAX una licencia no exclusiva para usarlo, reproducirlo y mostrarlo únicamente en el marco de los SERVICIOS.</p>
+      <p>El CLIENTE declara que el contenido cargado no infringe derechos de terceros, no es difamatorio, violento, obsceno ni ilícito. PAX podrá eliminar contenido que incumpla estas condiciones sin aviso previo. El CLIENTE no revelará información personal del otro CLIENTE obtenida en el marco de los SERVICIOS.</p>
+    </section>
+
+    <section id="s9">
+      <h2>9. Comunicaciones</h2>
+      <p>Al registrarse, el CLIENTE acepta recibir comunicaciones informativas (SMS, notificaciones push, correo electrónico) relacionadas con el uso de los SERVICIOS. El CLIENTE puede solicitar la exclusión de estas comunicaciones a través del canal de contacto en la APLICACIÓN, aunque ello podría afectar el normal funcionamiento del servicio.</p>
+    </section>
+
+    <section id="s10">
+      <h2>10. Limitación de responsabilidad</h2>
+      <p>Los SERVICIOS se prestan según disponibilidad. PAX no garantiza que sean ininterrumpidos, libres de errores ni seguros, ni garantiza la calidad, idoneidad o seguridad de los CONDUCTORES o vehículos que operen a través de la PLATAFORMA.</p>
+      <p>En la máxima medida permitida por la ley, PAX no será responsable por daños directos, indirectos, incidentales, punitivos o consecuentes que deriven del uso de los SERVICIOS, incluyendo pérdida de datos, ganancias, daños a la propiedad o lesiones personales.</p>
+      <p>PAX no será responsable por las acciones u omisiones de CONDUCTORES o USUARIOS en el marco del servicio de transporte, ni por daños a pasajeros derivados de la ausencia o insuficiencia de cobertura de seguro del CONDUCTOR.</p>
+      <p>Las presentes limitaciones no pretenden excluir derechos del consumidor que no puedan ser renunciados conforme a la Ley 24.240 de Defensa del Consumidor.</p>
+      <h3>Indemnidad</h3>
+      <p>El CLIENTE se compromete a mantener indemne a PAX frente a cualquier reclamo, pérdida o gasto que se origine en: (i) el uso indebido de los SERVICIOS; (ii) el incumplimiento de estos Términos; (iii) la infracción de derechos de terceros; o (iv) daños causados a otros CLIENTES durante la prestación del servicio.</p>
+    </section>
+
+    <section id="s11">
+      <h2>11. Legislación y resolución de conflictos</h2>
+      <p>Estos Términos se rigen por las leyes de la República Argentina. Ante cualquier controversia, las partes procurarán resolverla de buena fe. Si no se alcanza un acuerdo en 30 días corridos desde notificada la controversia por escrito, la disputa podrá someterse a mediación prejudicial conforme a la Ley 26.589. Si la mediación fracasara, la controversia se someterá a los Tribunales Ordinarios de la Ciudad Autónoma de Buenos Aires.</p>
+      <p>Los consumidores conservan en todo momento el derecho a acudir a las autoridades administrativas de defensa del consumidor competentes.</p>
+    </section>
+
+    <section id="s12">
+      <h2>12. Disposiciones generales</h2>
+      <div class="def-list">
+        <div class="def-item"><span class="def-term">Integridad</span><span class="def-desc">Este documento, junto con la Política de Privacidad de PAX, constituye el acuerdo íntegro entre las partes.</span></div>
+        <div class="def-item"><span class="def-term">Divisibilidad</span><span class="def-desc">Si alguna cláusula fuera declarada nula o inaplicable, el resto del documento mantendrá su plena vigencia.</span></div>
+        <div class="def-item"><span class="def-term">No renuncia</span><span class="def-desc">La omisión de PAX de exigir el cumplimiento de alguna cláusula no implica renuncia a exigirla en el futuro.</span></div>
+        <div class="def-item"><span class="def-term">Cesión</span><span class="def-desc">PAX podrá ceder sus derechos y obligaciones a subsidiarias, afiliadas o adquirentes sin consentimiento previo del CLIENTE.</span></div>
+      </div>
+    </section>
+
+    <section id="s13">
+      <h2>13. Contacto</h2>
+      <p>Para consultas, reclamos o notificaciones relacionadas con estos Términos, el CLIENTE puede comunicarse a través del canal de contacto disponible en la APLICACIÓN o en el sitio web oficial de PAX.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 PAX · República Argentina</p>
+    <ul class="footer-links">
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Privacidad</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.sidebar a');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  sections.forEach(s => io.observe(s));
+</script>
+</body>
+</html>

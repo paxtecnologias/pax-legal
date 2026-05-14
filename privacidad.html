@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacidad — PAX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000; --white: #fff;
+      --g1: #f6f6f6; --g2: #e8e8e8; --g3: #aaa; --g4: #555; --text: #1a1a1a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; background: var(--white); color: var(--text); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--g2); }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--black); text-decoration: none; letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--g3); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--black); }
+
+    .page-header { max-width: 1080px; margin: 0 auto; padding: 5rem 2rem 3rem; border-bottom: 1px solid var(--g2); }
+    .page-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+
+    .layout { max-width: 1080px; margin: 0 auto; padding: 3rem 2rem 8rem; display: grid; grid-template-columns: 200px 1fr; gap: 6rem; align-items: start; }
+
+    .sidebar { position: sticky; top: 80px; }
+    .sidebar-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--g3); margin-bottom: 1rem; }
+    .sidebar ul { list-style: none; }
+    .sidebar a { display: block; padding: 0.35rem 0 0.35rem 0.75rem; margin-left: -0.75rem; font-size: 0.82rem; color: var(--g3); text-decoration: none; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; }
+    .sidebar a:hover { color: var(--black); }
+    .sidebar a.active { color: var(--black); border-left-color: var(--black); font-weight: 500; }
+
+    .content section { padding-bottom: 3rem; margin-bottom: 3rem; border-bottom: 1px solid var(--g2); scroll-margin-top: 80px; }
+    .content section:last-child { border-bottom: none; }
+    .content h2 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; color: var(--black); margin-bottom: 1.25rem; }
+    .content h3 { font-size: 0.95rem; font-weight: 600; color: var(--black); margin: 2rem 0 0.75rem; }
+    .content h4 { font-size: 0.75rem; font-weight: 600; color: var(--g3); text-transform: uppercase; letter-spacing: 0.08em; margin: 1.5rem 0 0.6rem; }
+    .content p { font-size: 0.9375rem; color: #333; margin-bottom: 1rem; line-height: 1.75; }
+    .content a { color: var(--black); }
+    .content ul { list-style: none; margin: 0.75rem 0 1.25rem; border-top: 1px solid var(--g2); }
+    .content ul li { font-size: 0.9375rem; color: #333; padding: 0.7rem 0 0.7rem 1rem; border-bottom: 1px solid var(--g2); position: relative; line-height: 1.6; }
+    .content ul li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 4px; height: 4px; border-radius: 50%; background: var(--g3); }
+    .content ul li strong { font-weight: 600; color: var(--black); }
+
+    .def-list { margin: 0.5rem 0 1rem; }
+    .def-item { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--g2); font-size: 0.9rem; line-height: 1.6; }
+    .def-item:first-child { border-top: 1px solid var(--g2); }
+    .def-term { font-weight: 600; color: var(--black); font-size: 0.82rem; }
+    .def-desc { color: #444; }
+
+    .notice { background: var(--g1); border-radius: 6px; padding: 1rem 1.25rem; font-size: 0.875rem; color: var(--g4); margin: 1.25rem 0; line-height: 1.65; }
+    .notice strong { color: var(--black); font-weight: 500; }
+
+    .rights { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--g2); border: 1px solid var(--g2); border-radius: 6px; overflow: hidden; margin: 1rem 0; }
+    .right { background: var(--white); padding: 1.1rem 1.25rem; }
+    .right strong { display: block; font-size: 0.82rem; font-weight: 600; color: var(--black); margin-bottom: 0.3rem; }
+    .right p { font-size: 0.82rem; color: var(--g4); margin: 0; line-height: 1.5; }
+
+    .tabla { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 1rem 0; }
+    .tabla th { text-align: left; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--g3); padding: 0 0 0.75rem; border-bottom: 1px solid var(--g2); }
+    .tabla td { padding: 0.8rem 0; border-bottom: 1px solid var(--g2); color: #333; vertical-align: top; line-height: 1.5; }
+    .tabla td:first-child { font-weight: 500; color: var(--black); width: 42%; padding-right: 1.5rem; }
+    .tabla tr:last-child td { border-bottom: none; }
+
+    footer { border-top: 1px solid var(--g2); padding: 2.5rem 2rem; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-inner p { font-size: 0.8rem; color: var(--g3); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.8rem; color: var(--g3); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; gap: 0; padding-top: 2rem; }
+      .sidebar { display: none; }
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .layout { padding: 2rem 1.25rem 5rem; }
+      .nav-inner { padding: 0 1.25rem; }
+      .def-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .rights { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">PAX</a>
+    <ul class="nav-links">
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html" class="active">Privacidad</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Política de privacidad</h1>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <p class="sidebar-label">Contenido</p>
+    <ul>
+      <li><a href="#s1">1. Introducción</a></li>
+      <li><a href="#s2">2. Datos que recopilamos</a></li>
+      <li><a href="#s3">3. Geolocalización</a></li>
+      <li><a href="#s4">4. Finalidad y base legal</a></li>
+      <li><a href="#s5">5. Compartición con terceros</a></li>
+      <li><a href="#s6">6. Transferencias internacionales</a></li>
+      <li><a href="#s7">7. Conservación de datos</a></li>
+      <li><a href="#s8">8. Tus derechos</a></li>
+      <li><a href="#s9">9. Seguridad</a></li>
+      <li><a href="#s10">10. Menores de edad</a></li>
+      <li><a href="#s11">11. Cookies</a></li>
+      <li><a href="#s12">12. Cambios en esta política</a></li>
+      <li><a href="#s13">13. Contacto</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <section id="s1">
+      <h2>1. Introducción</h2>
+      <p>PAX es responsable del tratamiento de los datos personales recopilados a través de la aplicación móvil PAX y PAX CONDUCTOR (la "APLICACIÓN") y los servicios relacionados.</p>
+      <p>Esta política describe qué datos recopilamos, cómo los usamos, con quién los compartimos, cuánto tiempo los conservamos y cuáles son los derechos de los titulares. Debe leerse junto con los <a href="terminos.html">Términos y condiciones</a> de PAX.</p>
+      <div class="notice"><strong>Marco legal:</strong> PAX opera conforme a la Ley N.° 25.326 de Protección de los Datos Personales de la República Argentina y las disposiciones de la Agencia de Acceso a la Información Pública (AAIP).</div>
+    </section>
+
+    <section id="s2">
+      <h2>2. Datos que recopilamos</h2>
+      <h3>Datos proporcionados directamente</h3>
+      <ul>
+        <li>Nombre y apellido.</li>
+        <li>Número de teléfono móvil y correo electrónico.</li>
+        <li>Fotografía de perfil (opcional).</li>
+        <li>Método de pago para recargas de WALLET (datos de transferencia bancaria u otro medio habilitado).</li>
+        <li><strong>Solo para CONDUCTORES:</strong> licencia de conducir, seguro obligatorio del automotor, verificación técnica vehicular y habilitaciones correspondientes.</li>
+        <li>Datos de contratación del SEGURO PARA PLATAFORMA, cuando el CONDUCTOR opte por contratarlo.</li>
+        <li>Calificaciones, comentarios y comunicaciones con PAX o con otros CLIENTES.</li>
+      </ul>
+      <h3>Datos generados durante el uso</h3>
+      <ul>
+        <li>Ubicación geográfica en tiempo real del dispositivo (ver sección 3).</li>
+        <li>Información del dispositivo: modelo, sistema operativo, identificadores y dirección IP.</li>
+        <li>Datos de uso: fecha y hora de acceso, viajes solicitados o realizados, historial de interacciones.</li>
+        <li>Datos de WALLET: historial de recargas, importes, comisiones aplicadas y débitos por viaje.</li>
+        <li>Registros de mensajes internos de la APLICACIÓN.</li>
+      </ul>
+      <h3>Datos de terceros</h3>
+      <ul>
+        <li>Integradores de pago, para la verificación de transacciones y recargas de WALLET.</li>
+        <li>La ASEGURADORA, para gestionar el estado de la póliza del CONDUCTOR que haya optado por el SEGURO PARA PLATAFORMA.</li>
+        <li>Proveedores de verificación de identidad o antecedentes, cuando corresponda para el registro de CONDUCTORES.</li>
+        <li>Autoridades competentes, cuando así lo requiera la ley.</li>
+      </ul>
+    </section>
+
+    <section id="s3">
+      <h2>3. Geolocalización</h2>
+      <p>La APLICACIÓN recopila la ubicación precisa del dispositivo tanto en primer plano (app visible) como en segundo plano (app activa pero no visible). Esto es necesario para:</p>
+      <ul>
+        <li>Identificar la posición del CONDUCTOR y asignarlo eficientemente a las solicitudes de viaje.</li>
+        <li>Permitir al USUARIO visualizar la ubicación del CONDUCTOR en tiempo real.</li>
+        <li>Calcular distancias, tiempos estimados de llegada y tarifas.</li>
+        <li>Mejorar la seguridad durante el viaje mediante el seguimiento del recorrido.</li>
+      </ul>
+      <div class="notice"><strong>Ubicación en segundo plano:</strong> Cuando sea necesario, el sistema operativo del dispositivo solicitará al CONDUCTOR configurar el permiso de ubicación como "Permitir todo el tiempo". Esta configuración es necesaria para el correcto funcionamiento del servicio.</div>
+      <p>La ubicación recopilada no se utilizará para fines distintos a los descriptos en esta política sin el consentimiento previo del CLIENTE.</p>
+    </section>
+
+    <section id="s4">
+      <h2>4. Finalidad y base legal</h2>
+      <h4>Prestación del servicio — ejecución del contrato</h4>
+      <ul>
+        <li>Crear y gestionar cuentas.</li>
+        <li>Conectar CONDUCTORES y USUARIOS en tiempo real.</li>
+        <li>Gestionar la WALLET: recargas, débitos de comisiones y saldo disponible.</li>
+        <li>Facilitar la contratación del SEGURO PARA PLATAFORMA cuando el CONDUCTOR lo solicite.</li>
+        <li>Procesar pagos y emitir comprobantes.</li>
+        <li>Brindar atención al cliente y gestionar reclamos.</li>
+      </ul>
+      <h4>Seguridad y cumplimiento legal — obligación legal e interés legítimo</h4>
+      <ul>
+        <li>Verificar la identidad de los CLIENTES y la documentación de los CONDUCTORES.</li>
+        <li>Prevenir el fraude y el uso indebido de la APLICACIÓN.</li>
+        <li>Cumplir con requerimientos de autoridades competentes.</li>
+      </ul>
+      <h4>Mejora del servicio — interés legítimo</h4>
+      <ul>
+        <li>Analizar el uso de la APLICACIÓN para optimizar su funcionamiento.</li>
+        <li>Desarrollar nuevas funcionalidades y mejorar la experiencia del usuario.</li>
+        <li>Generar estadísticas internas en forma anonimizada o agregada.</li>
+      </ul>
+      <h4>Comunicaciones — consentimiento</h4>
+      <ul>
+        <li>Enviar notificaciones push, SMS y correos relacionados con el uso del servicio.</li>
+        <li>Informar sobre actualizaciones y novedades de PAX, solo si el CLIENTE lo acepta expresamente.</li>
+      </ul>
+    </section>
+
+    <section id="s5">
+      <h2>5. Compartición con terceros</h2>
+      <p>PAX no vende ni alquila datos personales. Solo los compartimos en estos casos:</p>
+      <ul>
+        <li><strong>Con la ASEGURADORA:</strong> cuando el CONDUCTOR contrate el SEGURO PARA PLATAFORMA, compartimos los datos necesarios para la emisión y gestión de la póliza. No se comparten datos de USUARIOS con la ASEGURADORA, salvo en el contexto de un siniestro donde sea estrictamente necesario.</li>
+        <li><strong>Entre CONDUCTORES y USUARIOS:</strong> al confirmar un viaje, cada parte recibe nombre, foto de perfil, teléfono y datos del vehículo, exclusivamente para coordinar el encuentro.</li>
+        <li><strong>Proveedores de servicios:</strong> procesamiento de pagos, almacenamiento en la nube, análisis de datos y atención al cliente, bajo instrucciones de PAX y con estándares de seguridad equivalentes.</li>
+        <li><strong>Aseguradoras y liquidadores de siniestros:</strong> en caso de accidentes, disputas o reclamos que involucren a terceros.</li>
+        <li><strong>Autoridades públicas:</strong> cuando lo exija la ley, una orden judicial o una autoridad competente.</li>
+        <li><strong>Transferencias corporativas:</strong> en caso de fusión, adquisición o reorganización, los datos podrán transferirse al nuevo operador bajo esta misma política o una equivalente.</li>
+      </ul>
+    </section>
+
+    <section id="s6">
+      <h2>6. Transferencias internacionales</h2>
+      <p>Algunos proveedores de tecnología (servicios de nube, mapas, pagos) pueden procesar datos en servidores ubicados fuera de Argentina. En todos los casos, PAX exige que garanticen un nivel de protección adecuado conforme a la Ley 25.326 y las resoluciones de la AAIP.</p>
+    </section>
+
+    <section id="s7">
+      <h2>7. Conservación de datos</h2>
+      <p>Conservamos los datos únicamente durante el tiempo necesario para las finalidades para las que fueron recopilados:</p>
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Tipo de dato</th>
+            <th>Plazo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Datos de cuenta activa</td><td>Durante toda la vigencia de la relación con el CLIENTE</td></tr>
+          <tr><td>Historial de viajes y transacciones</td><td>Hasta 5 años desde la realización del viaje</td></tr>
+          <tr><td>Documentación de conductores</td><td>Mientras la cuenta esté activa y según lo exija la normativa aplicable</td></tr>
+          <tr><td>Datos de comunicación y reclamos</td><td>Hasta 3 años desde el cierre del reclamo</td></tr>
+        </tbody>
+      </table>
+      <p>Vencidos estos plazos, los datos serán eliminados o anonimizados de forma segura.</p>
+    </section>
+
+    <section id="s8">
+      <h2>8. Tus derechos</h2>
+      <p>Conforme a la Ley 25.326, los CLIENTES tienen los siguientes derechos:</p>
+      <div class="rights">
+        <div class="right"><strong>Acceso</strong><p>Conocer qué datos personales suyos trata PAX.</p></div>
+        <div class="right"><strong>Rectificación</strong><p>Solicitar la corrección de datos inexactos, incompletos o desactualizados.</p></div>
+        <div class="right"><strong>Supresión</strong><p>Solicitar la eliminación de sus datos cuando ya no sean necesarios, sujeto a excepciones legales.</p></div>
+        <div class="right"><strong>Confidencialidad</strong><p>Exigir que sus datos no sean difundidos sin su consentimiento.</p></div>
+        <div class="right"><strong>Oposición</strong><p>Oponerse al tratamiento para fines de comunicación comercial o marketing.</p></div>
+      </div>
+      <p>Para ejercer estos derechos, el CLIENTE puede comunicarse a través del canal de contacto habilitado en la APLICACIÓN o en el sitio web de PAX, identificándose debidamente.</p>
+      <div class="notice"><strong>Organismo de control:</strong> El CLIENTE puede realizar consultas o denuncias ante la Agencia de Acceso a la Información Pública (AAIP) en <a href="https://www.argentina.gob.ar/aaip" target="_blank">www.argentina.gob.ar/aaip</a>.</div>
+    </section>
+
+    <section id="s9">
+      <h2>9. Seguridad</h2>
+      <p>PAX implementa medidas técnicas y organizativas para proteger los datos personales contra accesos no autorizados, pérdida, alteración o divulgación, incluyendo cifrado de datos en tránsito, controles de acceso internos y revisiones periódicas de seguridad.</p>
+      <p>En caso de una vulneración de seguridad que afecte los derechos de los CLIENTES, PAX notificará a los afectados y a la AAIP conforme a los plazos y procedimientos establecidos por la normativa vigente.</p>
+    </section>
+
+    <section id="s10">
+      <h2>10. Menores de edad</h2>
+      <p>Los SERVICIOS están dirigidos exclusivamente a personas mayores de 18 años. PAX no recopila deliberadamente datos de menores. Si tomamos conocimiento de que hemos recopilado datos de un menor sin el consentimiento de su tutor legal, los eliminaremos de inmediato. Los padres, madres o tutores pueden notificárnoslo a través del canal de contacto en la APLICACIÓN.</p>
+    </section>
+
+    <section id="s11">
+      <h2>11. Cookies y tecnologías similares</h2>
+      <p>La APLICACIÓN y el sitio web de PAX pueden utilizar tecnologías de seguimiento (cookies, pixels, SDKs de terceros) para mejorar la experiencia del CLIENTE, analizar el uso del servicio y personalizar las comunicaciones. El CLIENTE puede gestionar estas preferencias desde la configuración de su dispositivo o la APLICACIÓN.</p>
+    </section>
+
+    <section id="s12">
+      <h2>12. Cambios en esta política</h2>
+      <p>PAX podrá actualizar esta política en cualquier momento. Los cambios entrarán en vigor desde su publicación en la APLICACIÓN o el sitio web. Si los cambios fueran sustanciales, notificaremos a los CLIENTES a través de los medios de contacto registrados. El uso continuado de los SERVICIOS implica la aceptación de la nueva política.</p>
+    </section>
+
+    <section id="s13">
+      <h2>13. Contacto</h2>
+      <p>Para consultas, reclamos o ejercicio de derechos relacionados con el tratamiento de datos personales, el CLIENTE puede comunicarse a través del canal de contacto disponible en la APLICACIÓN o en el sitio web oficial de PAX.</p>
+      <p>PAX, empresa constituida bajo las leyes de la República Argentina, es la responsable del tratamiento de los datos personales descriptos en esta política.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 PAX · República Argentina</p>
+    <ul class="footer-links">
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Privacidad</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.sidebar a');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  sections.forEach(s => io.observe(s));
+</script>
+</body>
+</html>
