@@ -32,6 +32,12 @@
     .sidebar a { display: block; padding: 0.35rem 0 0.35rem 0.75rem; margin-left: -0.75rem; font-size: 0.82rem; color: var(--g3); text-decoration: none; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; }
     .sidebar a:hover { color: var(--black); }
     .sidebar a.active { color: var(--black); border-left-color: var(--black); font-weight: 500; }
+    .sidebar-group { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--g3); margin: 1.75rem 0 0.6rem; padding-top: 1.25rem; border-top: 1px solid var(--g2); }
+    .sidebar-group:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+
+    .anexo-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--g3); margin-bottom: 0.5rem; }
+    .content section.anexo { border-top: 2px solid var(--black); padding-top: 2.5rem; }
+    .content section.anexo:first-of-type { }
 
     .content section { padding-bottom: 3rem; margin-bottom: 3rem; border-bottom: 1px solid var(--g2); scroll-margin-top: 80px; }
     .content section:last-child { border-bottom: none; }
@@ -87,6 +93,7 @@
 <div class="layout">
   <aside class="sidebar">
     <p class="sidebar-label">Contenido</p>
+    <p class="sidebar-group">Parte general</p>
     <ul>
       <li><a href="#glosario">Glosario</a></li>
       <li><a href="#s1">1. El servicio</a></li>
@@ -95,13 +102,18 @@
       <li><a href="#s4">4. Requisitos y responsabilidades</a></li>
       <li><a href="#s5">5. Licencia</a></li>
       <li><a href="#s6">6. Tarifas y comisiones</a></li>
-      <li><a href="#s7">7. Seguro para pasajeros</a></li>
+      <li><a href="#s7">7. Seguros</a></li>
       <li><a href="#s8">8. Contenido</a></li>
       <li><a href="#s9">9. Comunicaciones</a></li>
       <li><a href="#s10">10. Responsabilidad</a></li>
       <li><a href="#s11">11. Legislación</a></li>
       <li><a href="#s12">12. Disposiciones generales</a></li>
       <li><a href="#s13">13. Contacto</a></li>
+    </ul>
+    <p class="sidebar-group">Anexos por modalidad</p>
+    <ul>
+      <li><a href="#anexoA">Anexo A · PAX Auto</a></li>
+      <li><a href="#anexoB">Anexo B · PAX Moto</a></li>
     </ul>
   </aside>
 
@@ -116,6 +128,9 @@
         <div class="def-item"><span class="def-term">CONDUCTOR</span><span class="def-desc">Persona física mayor de 18 años que, de forma independiente, ofrece servicios de transporte a través de la APLICACIÓN.</span></div>
         <div class="def-item"><span class="def-term">CLIENTE / CLIENTES</span><span class="def-desc">Término que refiere a USUARIOS y CONDUCTORES en forma conjunta.</span></div>
         <div class="def-item"><span class="def-term">SERVICIOS</span><span class="def-desc">El conjunto de funcionalidades tecnológicas ofrecidas por la PLATAFORMA, incluyendo la app, el portal web y las comunicaciones relacionadas.</span></div>
+        <div class="def-item"><span class="def-term">MODALIDAD</span><span class="def-desc">Cada tipo de servicio de transporte disponible en la PLATAFORMA (por ejemplo, Auto o Moto), regulado por su respectivo ANEXO.</span></div>
+        <div class="def-item"><span class="def-term">VEHÍCULO</span><span class="def-desc">El automóvil o la motocicleta con el que el CONDUCTOR presta el servicio, según la MODALIDAD que opere.</span></div>
+        <div class="def-item"><span class="def-term">ANEXO</span><span class="def-desc">Documento complementario a estos Términos que regula las condiciones particulares de una MODALIDAD específica. Forma parte integrante de estos Términos.</span></div>
       </div>
     </section>
 
@@ -123,6 +138,8 @@
       <h2>1. El servicio</h2>
       <p>PAX es una plataforma tecnológica que conecta en tiempo real a CONDUCTORES independientes con USUARIOS que requieren servicios de transporte. PAX no presta servicios de transporte por sí misma: actúa exclusivamente como intermediaria tecnológica que facilita la interacción entre partes independientes.</p>
       <p>A través de la APLICACIÓN, el USUARIO puede ver la ubicación del CONDUCTOR en tiempo real, mejorando la seguridad, la previsibilidad del servicio y la coordinación del punto de encuentro. El CONDUCTOR recibe solicitudes de viaje y puede gestionarlas desde su dispositivo móvil.</p>
+      <h3>Modalidades de transporte</h3>
+      <p>PAX ofrece distintas MODALIDADES de transporte, actualmente <strong>Auto</strong> (transporte en automóvil) y <strong>Moto</strong> (transporte en motocicleta), pudiendo incorporar nuevas modalidades en el futuro. Cada MODALIDAD se rige por estos Términos y, de forma complementaria, por el ANEXO que le corresponde. Al solicitar o aceptar un viaje en una MODALIDAD determinada, el CLIENTE acepta también las condiciones particulares de su ANEXO.</p>
     </section>
 
     <section id="s2">
@@ -132,6 +149,8 @@
       <p>PAX se reserva el derecho de modificar estos Términos en cualquier momento. Las modificaciones entrarán en vigor desde su publicación. El uso continuado de los SERVICIOS constituirá la aceptación de los nuevos términos.</p>
       <h3>Terminación</h3>
       <p>PAX podrá suspender o dar por terminada la relación contractual con cualquier CLIENTE, con o sin causa. El CLIENTE también podrá dar de baja su cuenta en cualquier momento desde la APLICACIÓN.</p>
+      <h3>Integración con los Anexos</h3>
+      <p>Estos Términos se complementan con los ANEXOS por MODALIDAD, que forman parte integrante e inseparable de ellos. En caso de contradicción entre el cuerpo general y un ANEXO respecto de una MODALIDAD específica, prevalecerá lo dispuesto en el ANEXO para esa MODALIDAD. La incorporación de nuevas MODALIDADES se realizará mediante la publicación del ANEXO respectivo, sin necesidad de modificar el resto del documento.</p>
     </section>
 
     <section id="s3">
@@ -145,7 +164,7 @@
       <p>Para utilizar los SERVICIOS, el CLIENTE debe ser mayor de 18 años, registrarse con información veraz y actualizada, proporcionar un método de contacto válido, y cumplir con todas las leyes aplicables en su jurisdicción.</p>
       <h3>Responsabilidades del conductor</h3>
       <ul>
-        <li>Mantener su documentación personal y vehicular vigente: licencia de conducir, seguro obligatorio del automotor, verificación técnica vehicular y habilitaciones municipales o nacionales que correspondan.</li>
+        <li>Mantener vigente la documentación personal y del VEHÍCULO exigida por la normativa aplicable y detallada en el ANEXO correspondiente a la MODALIDAD que opere (Auto o Moto): licencia de conducir de la categoría que corresponda, seguro obligatorio, verificación técnica y habilitaciones municipales, provinciales o nacionales pertinentes.</li>
         <li>Brindar el servicio de transporte de manera segura, respetuosa y conforme a la normativa vial vigente.</li>
         <li>Tratar a los USUARIOS con respeto y sin discriminación de ningún tipo.</li>
         <li>Mantener su información de cuenta actualizada y resguardar sus credenciales de acceso.</li>
@@ -183,8 +202,9 @@
     </section>
 
     <section id="s7">
-      <h2>7. Seguro para pasajeros</h2>
+      <h2>7. Seguros</h2>
       <p>PAX ha celebrado un convenio con una compañía aseguradora ("ASEGURADORA") mediante el cual los CONDUCTORES pueden contratar, desde la APLICACIÓN, un seguro de responsabilidad civil hacia pasajeros ("SEGURO PARA PLATAFORMA"). La contratación es gestionada directamente entre el CONDUCTOR y la ASEGURADORA; PAX actúa únicamente como intermediaria tecnológica que facilita el acceso.</p>
+      <p>Las exigencias y particularidades de cobertura pueden variar según la MODALIDAD (Auto o Moto). Las condiciones específicas de cada MODALIDAD se detallan en el ANEXO correspondiente, sin perjuicio del seguro obligatorio que la normativa imponga en cada caso.</p>
       <h3>Rol de PAX</h3>
       <p>PAX no es una compañía de seguros ni un agente o productor de seguros habilitado, no asume responsabilidades propias de un asegurador, y no es parte del contrato de seguro. Las condiciones de cobertura, la prima y las exclusiones son definidas exclusivamente por la ASEGURADORA conforme a la Ley N.° 17.418 de Seguros y la normativa de la Superintendencia de Seguros de la Nación (SSN).</p>
       <h3>Obligatoriedad según normativa local</h3>
@@ -234,6 +254,79 @@
     <section id="s13">
       <h2>13. Contacto</h2>
       <p>Para consultas, reclamos o notificaciones relacionadas con estos Términos, el CLIENTE puede comunicarse a través del canal de contacto disponible en la APLICACIÓN o en el sitio web oficial de PAX.</p>
+    </section>
+
+    <section id="anexoA" class="anexo">
+      <p class="anexo-eyebrow">Anexo A</p>
+      <h2>PAX Auto</h2>
+      <p>Este ANEXO regula las condiciones particulares de la MODALIDAD <strong>Auto</strong>: el transporte de USUARIOS en automóvil. Complementa el cuerpo general de los Términos y Condiciones y prevalece sobre este en lo específico de la MODALIDAD.</p>
+
+      <h3>Requisitos del vehículo</h3>
+      <ul>
+        <li>Automóvil de cuatro ruedas, habilitado para circular, en buen estado de conservación y funcionamiento.</li>
+        <li>Cinturón de seguridad operativo en todas las plazas ofrecidas a USUARIOS.</li>
+        <li>Cumplir con la antigüedad máxima y demás condiciones que exija la normativa de la jurisdicción donde opere.</li>
+      </ul>
+
+      <h3>Documentación del conductor</h3>
+      <ul>
+        <li>Licencia nacional de conducir vigente, de la categoría habilitante para automóvil.</li>
+        <li>Cédula de identificación del automotor (título o cédula verde/azul según corresponda).</li>
+        <li>Seguro obligatorio de responsabilidad civil del automotor vigente.</li>
+        <li>Verificación Técnica Vehicular (VTV / RTO) vigente, donde la normativa la exija.</li>
+        <li>Habilitaciones municipales, provinciales o nacionales que correspondan a la actividad.</li>
+      </ul>
+
+      <h3>Condiciones del servicio</h3>
+      <ul>
+        <li>La cantidad de USUARIOS transportados no podrá exceder el número de plazas con cinturón de seguridad del VEHÍCULO.</li>
+        <li>El transporte de menores se realizará conforme a la normativa vial vigente, incluyendo el uso de sistemas de retención infantil cuando corresponda.</li>
+        <li>El CONDUCTOR es responsable del cumplimiento de las normas de tránsito y del estado de seguridad del VEHÍCULO durante todo el viaje.</li>
+      </ul>
+
+      <h3>Seguros</h3>
+      <p>Además del seguro obligatorio del automotor, el CONDUCTOR puede contratar el SEGURO PARA PLATAFORMA conforme a la sección 7 de los Términos. Es responsabilidad exclusiva del CONDUCTOR contar con la cobertura que exija la normativa de su jurisdicción.</p>
+    </section>
+
+    <section id="anexoB" class="anexo">
+      <p class="anexo-eyebrow">Anexo B</p>
+      <h2>PAX Moto</h2>
+      <p>Este ANEXO regula las condiciones particulares de la MODALIDAD <strong>Moto</strong>: el transporte de USUARIOS en motocicleta. Complementa el cuerpo general de los Términos y Condiciones y prevalece sobre este en lo específico de la MODALIDAD. Dada la naturaleza de esta MODALIDAD, se establecen condiciones de seguridad reforzadas.</p>
+
+      <h3>Requisitos del vehículo</h3>
+      <ul>
+        <li>Motocicleta habilitada para circular, en buen estado de conservación y funcionamiento, con los elementos de seguridad exigidos por la normativa.</li>
+        <li>Apta para el transporte de un acompañante (asiento y apoyapiés para el USUARIO).</li>
+        <li>Cumplir con la antigüedad máxima y demás condiciones que exija la normativa de la jurisdicción donde opere.</li>
+      </ul>
+
+      <h3>Documentación del conductor</h3>
+      <ul>
+        <li>Licencia nacional de conducir vigente, categoría A (motovehículos), de la clase habilitante.</li>
+        <li>Cédula de identificación del motovehículo.</li>
+        <li>Seguro obligatorio de responsabilidad civil vigente.</li>
+        <li>Verificación Técnica Vehicular vigente, donde la normativa la exija.</li>
+        <li>Habilitaciones municipales, provinciales o nacionales que correspondan a la actividad.</li>
+      </ul>
+
+      <h3>Seguridad — uso obligatorio de casco</h3>
+      <p>El uso de casco homologado es obligatorio para el CONDUCTOR y para el USUARIO durante todo el viaje, conforme a la Ley Nacional de Tránsito N.° 24.449 y la normativa local aplicable.</p>
+      <div class="notice"><strong>Casco para el USUARIO:</strong> el CONDUCTOR deberá disponer de un casco homologado en condiciones de uso para el USUARIO. El USUARIO se compromete a utilizarlo correctamente durante todo el trayecto. El USUARIO podrá rechazar el viaje si no se le provee un casco en condiciones.</div>
+
+      <h3>Condiciones del servicio</h3>
+      <ul>
+        <li>Se transporta un (1) único USUARIO por viaje. No se admiten acompañantes adicionales.</li>
+        <li>El transporte de menores queda sujeto a la normativa vigente en la jurisdicción, que puede prohibirlo o exigir una edad mínima; es responsabilidad del CONDUCTOR verificar y cumplir dicha normativa.</li>
+        <li>No se transportará carga voluminosa, peligrosa o que comprometa la estabilidad o la seguridad del viaje.</li>
+        <li>Se recomienda al USUARIO utilizar calzado cerrado y vestimenta adecuada, y seguir en todo momento las indicaciones de seguridad del CONDUCTOR.</li>
+        <li>Ante condiciones climáticas adversas (lluvia, viento fuerte u otras) o de la vía que aumenten el riesgo, tanto el CONDUCTOR como el USUARIO pueden cancelar el viaje sin penalidad.</li>
+      </ul>
+
+      <h3>Riesgo inherente</h3>
+      <div class="notice">El USUARIO reconoce que el transporte en motocicleta implica un riesgo inherente mayor que el transporte en automóvil y acepta viajar bajo estas condiciones, comprometiéndose a utilizar el casco provisto y a seguir las indicaciones de seguridad. Ello sin perjuicio de las responsabilidades del CONDUCTOR y de las coberturas de seguro aplicables.</div>
+
+      <h3>Seguros</h3>
+      <p>Además del seguro obligatorio del motovehículo, el CONDUCTOR puede contratar el SEGURO PARA PLATAFORMA conforme a la sección 7 de los Términos. Es responsabilidad exclusiva del CONDUCTOR contar con la cobertura que exija la normativa de su jurisdicción para esta MODALIDAD.</p>
     </section>
 
   </main>
